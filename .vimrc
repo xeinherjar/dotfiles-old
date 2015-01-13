@@ -1,3 +1,6 @@
+" Don't care about VI
+set nocompatible
+
 set t_Co=256
 let g:rehash256 = 1
 
@@ -8,17 +11,17 @@ colorscheme Molokai
 set background=dark
 
 set softtabstop=4
-set expandtab
 set shiftwidth=4
+set expandtab
 
 set ruler
 set number
-set nocompatible
 set autoindent smartindent
 
-autocmd Filetype html       setlocal ts=2 sw=2 expandtab
-autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
-autocmd Filetype css        setlocal ts=2 sw=2 expandtab
+autocmd Filetype html       setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype css        setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype scss       setlocal ts=2 sts=2 sw=2 expandtab
 
 " spellcheck for markdown files
 autocmd BufRead,BufNewFile *.md setlocal spell
@@ -31,10 +34,10 @@ execute pathogen#infect()
 
 " nerdtree
 " open automatically
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 " open automatically without file
-autocmd StdinReadPre * let s:std_in:1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in:1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Toggle on/off CTRL+N
 map <C-n> :NERDTreeToggle<CR>
 " Close VIM if only NERDTree is left
