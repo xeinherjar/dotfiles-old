@@ -1,14 +1,16 @@
 " Don't care about VI
 set nocompatible
+set modelines=0
 
+" Termianl..
 set t_Co=256
 let g:rehash256 = 1
+set background=dark
 
 filetype plugin indent on
 syntax on
 
 colorscheme Molokai
-set background=dark
 
 set softtabstop=4
 set shiftwidth=4
@@ -17,6 +19,9 @@ set expandtab
 set ruler
 set number
 set autoindent smartindent
+set showmatch
+set encoding=utf-8
+
 
 autocmd Filetype html       setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
@@ -48,3 +53,17 @@ set laststatus=2
 
 " GitGutter
 " https://github.com/airblade/vim-gitgutter
+
+
+" Key maps
+
+" force myself to use hjkl for nav
+map <up>    <nop>
+map <down>  <nop>
+map <left>  <nop>
+map <right> <nop>
+
+" move display line, not text line
+nnoremap j gj
+nnoremap k gk
+
