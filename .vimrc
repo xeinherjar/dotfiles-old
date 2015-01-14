@@ -2,7 +2,7 @@
 set nocompatible
 set modelines=0
 
-" Termianl..
+" Terminal..
 set t_Co=256
 let g:rehash256 = 1
 set background=dark
@@ -34,6 +34,7 @@ autocmd BufRead,BufNewFile *.markdown setlocal spell
 " spellcheck on git commit messages
 autocmd FileType gitcommit setlocal spell
 
+
 " plugins
 execute pathogen#infect()
 
@@ -56,14 +57,47 @@ set laststatus=2
 
 
 " Key maps
+let mapleader = ","
 
 " force myself to use hjkl for nav
-map <up>    <nop>
-map <down>  <nop>
-map <left>  <nop>
-map <right> <nop>
+nnoremap <up>    <nop>
+nnoremap <down>  <nop>
+nnoremap <left>  <nop>
+nnoremap <right> <nop>
+inoremap <up>    <nop>
+inoremap <down>  <nop>
+inoremap <left>  <nop>
+inoremap <right> <nop>
 
 " move display line, not text line
 nnoremap j gj
 nnoremap k gk
 
+" back to normal mode, ie ESC
+inoremap jj <ESC>
+
+" windows
+nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Call Macro|Function
+nnoremap <leader>W :call <SID>StripTrailingWhiteSpaces()<CR>
+
+
+" Macros, functions
+
+" Strip Trailing Whitespace
+function! <SID>StripTrailingWhiteSpaces()
+    " save last search and cursor position
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " strip it
+    %s/\s\+$//e
+    " restore
+    let @/=_s
+    call cursor(l, c)
+endfunction
