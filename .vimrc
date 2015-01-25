@@ -2,6 +2,9 @@
 set nocompatible
 set modelines=0
 
+" Fix backspace
+set backspace=indent,eol,start
+
 " Terminal..
 set t_Co=256
 let g:rehash256 = 1
