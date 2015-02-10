@@ -10,21 +10,22 @@ set t_Co=256
 let g:rehash256 = 1
 set background=dark
 
-filetype plugin indent on
-syntax on
+filetype plugin indent on   " detect filetype, load indents/plugins
+syntax on                   " syntax highlighting
 
 colorscheme Molokai
 
-set softtabstop=4
-set shiftwidth=4
-set expandtab
+set softtabstop=4           " tab = 4 spaces
+set shiftwidth=4            " auto indent 4 spaces
+set expandtab               " insert tab as spaces
 
 set ruler
-set number
+set number                  " show line numbers
 set autoindent smartindent
-set showmatch
-set encoding=utf-8
-
+set showmatch               " show matching bracket
+set encoding=utf-8          " character encoding
+set visualbell              " use visual bell vs beeping
+set scrolloff=5             " minimal number of lines above/below cursor
 
 autocmd Filetype html       setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
@@ -58,6 +59,16 @@ set laststatus=2
 " GitGutter
 " https://github.com/airblade/vim-gitgutter
 
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_loc_list_height = 4
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Key maps
 let mapleader = ","

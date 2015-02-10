@@ -55,6 +55,8 @@ export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:/Library/Fram
 
 source $ZSH/oh-my-zsh.sh
 
+# ruby rbenv
+eval "$(rbenv init -)"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -80,3 +82,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias music="ncmpcpp"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
