@@ -13,7 +13,8 @@ set background=dark
 filetype plugin indent on   " detect filetype, load indents/plugins
 syntax on                   " syntax highlighting
 
-colorscheme Molokai
+"colorscheme Molokai
+colorscheme jellybeans
 
 set softtabstop=4           " tab = 4 spaces
 set shiftwidth=4            " auto indent 4 spaces
@@ -55,6 +56,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " airline - only works with NERDtree enabled, this fixes that.
 set laststatus=2
+let g:airline_powerline_fonts = 1
+
 
 " GitGutter
 " https://github.com/airblade/vim-gitgutter
