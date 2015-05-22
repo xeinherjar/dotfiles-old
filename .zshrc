@@ -85,3 +85,7 @@ alias music="ncmpcpp"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# GOPATH
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"

@@ -27,6 +27,9 @@ set showmatch               " show matching bracket
 set encoding=utf-8          " character encoding
 set visualbell              " use visual bell vs beeping
 set scrolloff=5             " minimal number of lines above/below cursor
+set cursorline              " highlight current line
+
+set matchpairs+=<:>         " match <> like other brackets
 
 autocmd Filetype html       setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
@@ -102,7 +105,7 @@ nnoremap <C-l> <C-w>l
 
 " Call Macro|Function
 nnoremap <leader>W :call <SID>StripTrailingWhiteSpaces()<CR>
-
+nnoremap <leader>N :call NumberToggle()<CR>
 
 " Macros, functions
 
@@ -118,3 +121,13 @@ function! <SID>StripTrailingWhiteSpaces()
     let @/=_s
     call cursor(l, c)
 endfunction
+
+" Toggle number, relative number
+function! NumberToggle()
+    if(&relativenumber == 1)
+        set number
+        set norelativenumber 
+    else
+        set relativenumber
+    endif
+endfunc
