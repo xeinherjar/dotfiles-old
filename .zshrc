@@ -50,7 +50,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:/Library/Frameworks/Python.framework/Versions/3.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:/Library/Frameworks/Python.framework/Versions/3.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/Cellar/postgresql/9.4.2/bin/"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -59,6 +59,9 @@ source $ZSH/oh-my-zsh.sh
 eval "$(rbenv init -)"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+
+# Set Readline to use vi keybindings!
+set -o vi
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -82,6 +85,8 @@ eval "$(rbenv init -)"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias music="ncmpcpp"
+alias pg-start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias pg-stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
