@@ -13,8 +13,8 @@ ln -s ~/dotfiles/xeinherjar.zsh-theme ~/.oh-my-zsh/themes/xeinherjar.zsh-theme
 
 Recently started using NeoVim
 ```
-ln ~/.vimrc ~/.nvimrc
-ln ~/.vim ~/.nvim
+ln -s ~/.vimrc ~/.nvimrc
+ln -s ~/.vim ~/.nvim
 ```
 
 Tell Git about global git ignore file
