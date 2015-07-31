@@ -13,7 +13,6 @@ set background=dark
 filetype plugin indent on   " detect filetype, load indents/plugins
 syntax on                   " syntax highlighting
 
-"colorscheme Molokai
 colorscheme jellybeans
 
 set softtabstop=4           " tab = 4 spaces
@@ -30,6 +29,7 @@ set scrolloff=5             " minimal number of lines above/below cursor
 set cursorline              " highlight current line
 
 set matchpairs+=<:>         " match <> like other brackets
+set iskeyword-=-            " - is end of word
 
 autocmd Filetype html       setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
@@ -42,16 +42,17 @@ autocmd BufRead,BufNewFile *.markdown setlocal spell
 " spellcheck on git commit messages
 autocmd FileType gitcommit setlocal spell
 
+" NeoVIM settings
+if has ('nvim')
+    " fixes CTRL+H mapping
+    " https://github.com/neovim/neovim/issues/2048#issuecomment-78045837
+    nmap <BS> <C-w>h
+endif
 
 " plugins
 execute pathogen#infect()
 
 " nerdtree
-" open automatically
-" autocmd vimenter * NERDTree
-" open automatically without file
-" autocmd StdinReadPre * let s:std_in:1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Toggle on/off CTRL+N
 map <C-n> :NERDTreeToggle<CR>
 " Close VIM if only NERDTree is left
@@ -126,7 +127,7 @@ endfunction
 function! NumberToggle()
     if(&relativenumber == 1)
         set number
-        set norelativenumber 
+        set norelativenumber
     else
         set relativenumber
     endif
