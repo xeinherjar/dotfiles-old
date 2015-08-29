@@ -14,6 +14,9 @@ git submodule init
 git submodule update
 ```
 
+Need to update all plugins?
+`git submodule foreach git pull origin master`
+
 Recently started using NeoVim
 ```
 ln -s ~/.vimrc ~/.nvimrc
