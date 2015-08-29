@@ -30,6 +30,9 @@ set cursorline              " highlight current line
 
 set matchpairs+=<:>         " match <> like other brackets
 set iskeyword-=-            " - is end of word
+set incsearch               " show partial results while typing
+set hlsearch                " highlight search results
+
 
 autocmd Filetype html       setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
@@ -48,34 +51,6 @@ if has ('nvim')
     " https://github.com/neovim/neovim/issues/2048#issuecomment-78045837
     nmap <BS> <C-w>h
 endif
-
-" plugins
-execute pathogen#infect()
-
-" nerdtree
-" Toggle on/off CTRL+N
-map <C-n> :NERDTreeToggle<CR>
-" Close VIM if only NERDTree is left
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" airline - only works with NERDtree enabled, this fixes that.
-set laststatus=2
-let g:airline_powerline_fonts = 1
-
-
-" GitGutter
-" https://github.com/airblade/vim-gitgutter
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_loc_list_height = 4
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " Key maps
 let mapleader = ","
@@ -104,9 +79,42 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Call native
+nnoremap <leader><space> :nohlsearch<CR> " turn off highlighted search results
+
 " Call Macro|Function
 nnoremap <leader>W :call <SID>StripTrailingWhiteSpaces()<CR>
 nnoremap <leader>N :call NumberToggle()<CR>
+
+
+
+" plugins
+execute pathogen#infect()
+
+" nerdtree
+" Toggle on/off CTRL+N
+map <C-n> :NERDTreeToggle<CR>
+" Close VIM if only NERDTree is left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" airline - only works with NERDtree enabled, this fixes that.
+set laststatus=2
+let g:airline_powerline_fonts = 1
+
+
+" GitGutter
+" https://github.com/airblade/vim-gitgutter
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_loc_list_height = 4
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Macros, functions
 
