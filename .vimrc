@@ -27,6 +27,9 @@ set encoding=utf-8          " character encoding
 set visualbell              " use visual bell vs beeping
 set scrolloff=5             " minimal number of lines above/below cursor
 set cursorline              " highlight current line
+set textwidth=80            " wrap at 80 characters
+set colorcolumn=+1          " visually show column 80
+highlight ColorColumn ctermbg=7 " set colorcolumn color
 
 set matchpairs+=<:>         " match <> like other brackets
 set iskeyword-=-            " - is end of word

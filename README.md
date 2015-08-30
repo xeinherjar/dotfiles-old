@@ -9,7 +9,7 @@ cd ~
 git clone git@github.com:xeinherjar/dotfiles.git
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.vim ~/.vim
-cd ~/.viim
+cd ~/.vim
 git submodule init
 git submodule update
 ```
