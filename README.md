@@ -23,6 +23,14 @@ ln -s ~/.vimrc ~/.nvimrc
 ln -s ~/.vim ~/.nvim
 ```
 
+Use git submodules for pathogen
+```
+cd ~/.vim/bundle
+git submodule add git@path/to/to/good/stuff.git
+git add .
+git commit -m "installed x plugin"
+```
+
 ## zsh, oh-my-zsh, tmux
 ```
 ln -s ~/dotfiles/.zshrc ~/.zshrc

@@ -55,6 +55,8 @@ export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:/Library/Fram
 
 source $ZSH/oh-my-zsh.sh
 
+export EDITOR='nvim'
+
 # ruby rbenv
 eval "$(rbenv init -)"
 # You may need to manually set your language environment
