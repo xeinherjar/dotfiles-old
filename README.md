@@ -31,6 +31,16 @@ git add .
 git commit -m "installed x plugin"
 ```
 
+I use Syntastic 
+For JavaScript/ES2015/JSX
+```
+npm install -g eslint
+npm install -g babel-eslint
+npm install -g eslint-plugin-react
+
+ln -s ~/dotfiles/.eslintrc ~/.eslintrc
+```
+
 ## zsh, oh-my-zsh, tmux
 ```
 ln -s ~/dotfiles/.zshrc ~/.zshrc
