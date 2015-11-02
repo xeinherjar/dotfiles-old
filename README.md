@@ -19,8 +19,9 @@ Need to update all plugins?
 
 Recently started using NeoVim
 ```
-ln -s ~/.vimrc ~/.nvimrc
-ln -s ~/.vim ~/.nvim
+mkdir -p ~/.config
+ln -s ~/dotfiles/.vim .config/nvim
+ln -s ~/dotfiles/.vimrc .config/nvim/init.vim
 ```
 
 Use git submodules for pathogen
