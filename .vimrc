@@ -29,7 +29,7 @@ set scrolloff=5             " minimal number of lines above/below cursor
 set cursorline              " highlight current line
 set textwidth=80            " wrap at 80 characters
 set colorcolumn=+1          " visually show column 80
-highlight ColorColumn ctermbg=7 " set colorcolumn color
+highlight ColorColumn ctermbg=8 " set colorcolumn color
 
 set matchpairs+=<:>         " match <> like other brackets
 set iskeyword-=-            " - is end of word
@@ -41,6 +41,8 @@ autocmd Filetype html       setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype css        setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype scss       setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype go         setlocal ts=4 sts=4 sw=4
+autocmd Filetype python     setlocal ts=4 sts=4 sw=4 expandtab encoding=utf-8
 
 " spellcheck for markdown files
 autocmd BufRead,BufNewFile *.md setlocal spell
@@ -102,8 +104,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " airline - only works with NERDtree enabled, this fixes that.
 set laststatus=2
-let g:airline_powerline_fonts = 1
-
+" let g:airline_powerline_fonts = 1
 
 " GitGutter
 " https://github.com/airblade/vim-gitgutter

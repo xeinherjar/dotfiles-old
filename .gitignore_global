@@ -1,4 +1,6 @@
 .DS_Store
 *.swp
 *.swo
-.sass-cache
+.sass-cache/
+node_modules/
+bower_components/

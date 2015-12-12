@@ -1,9 +1,21 @@
 # Dotfiles
 
+## OSX
+-  Install [iTerm2](https://www.iterm2.com/)
+-  Install [homebrew](http://brew.sh/)
+-  Install ZSH `brew install zsh`
+-  Edit /etc/shell to have an entry for the brew installed zsh
+-  Set Z Shell to default shell `chsh -s /usr/local/bin/zsh`
+-  Close/Reopen iTerm
+-  Install [oh-my-zsh](http://ohmyz.sh/)
 
 ## VIM
-Install VIM and pathogen.vim
+Install VIM and [pathogen.vim](https://github.com/tpope/vim-pathogen)
+```
+brew install vim
+```
 
+### Add dot files add vim plugins
 ```
 cd ~
 git clone git@github.com:xeinherjar/dotfiles.git
@@ -17,7 +29,7 @@ git submodule update
 Need to update all plugins?
 `git submodule foreach git pull origin master`
 
-Recently started using NeoVim
+Recently started using [NeoVim](https://github.com/neovim/neovim)
 ```
 mkdir -p ~/.config
 ln -s ~/dotfiles/.vim .config/nvim
@@ -32,7 +44,7 @@ git add .
 git commit -m "installed x plugin"
 ```
 
-I use Syntastic 
+I use Syntastic
 For JavaScript/ES2015/JSX
 ```
 npm install -g eslint
