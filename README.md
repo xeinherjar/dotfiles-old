@@ -9,6 +9,9 @@
 -  Close/Reopen iTerm
 -  Install [oh-my-zsh](http://ohmyz.sh/)
 
+## iTerm2
+ -  Install ~/dotfiles/jellybeans.itermcolors
+
 ## VIM
 Install VIM and [pathogen.vim](https://github.com/tpope/vim-pathogen)
 ```
