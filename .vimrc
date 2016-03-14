@@ -39,6 +39,7 @@ set hlsearch                " highlight search results
 
 autocmd Filetype html       setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype typescript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype css        setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype scss       setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype go         setlocal ts=4 sts=4 sw=4
@@ -73,6 +74,16 @@ inoremap <right> <nop>
 " move display line, not text line
 nnoremap j gj
 nnoremap k gk
+
+" move lines up/down
+" iTerm2 requires set option key as ESC+
+" Profiles > Keys > 'Left Options acts as', set ESC+
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " back to normal mode, ie ESC
 inoremap jj <ESC>
@@ -120,7 +131,7 @@ let g:syntastic_loc_list_height = 4
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-"let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['eslint']
 
 
 " Macros, functions

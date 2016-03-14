@@ -57,8 +57,6 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
 
-# ruby rbenv
-eval "$(rbenv init -)"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -89,6 +87,10 @@ set -o vi
 alias music="ncmpcpp"
 alias pg-start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pg-stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+export PATH="/Library/PostgreSQL/9.4/bin/:$PATH"
+
+# PYTHON
+alias python='python3'
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -96,3 +98,5 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # GOPATH
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
