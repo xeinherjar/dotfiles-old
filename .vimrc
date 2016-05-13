@@ -28,8 +28,15 @@ set visualbell              " use visual bell vs beeping
 set scrolloff=5             " minimal number of lines above/below cursor
 set cursorline              " highlight current line
 set textwidth=80            " wrap at 80 characters
-set colorcolumn=+1          " visually show column 80
-highlight ColorColumn ctermbg=8 " set colorcolumn color
+"set colorcolumn=+1          " visually show column 80
+"highlight ColorColumn ctermbg=8 " set colorcolumn color
+
+" Highlight when text exceedes 80 characters in length
+" Without the group it only works on the first buffer opened
+augroup vimrc_autocmds
+  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
+  autocmd BufEnter * match OverLength /\%80v.\+/
+augroup END
 
 set matchpairs+=<:>         " match <> like other brackets
 set iskeyword-=-            " - is end of word
@@ -131,7 +138,7 @@ let g:syntastic_loc_list_height = 4
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['jshint']
 
 
 " Macros, functions
