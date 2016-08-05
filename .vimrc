@@ -96,11 +96,18 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 inoremap jj <ESC>
 
 " windows
-nnoremap <leader>w <C-w>v<C-w>l
+" split window vertical
+nnoremap <leader>\| <C-w>v<C-w>l
+" move between windows
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+" move windows
+nnoremap <leader>h <C-w>H
+nnoremap <leader>j <C-w>J
+nnoremap <leader>k <C-w>K
+nnoremap <leader>l <C-w>L
 
 " Call native
 nnoremap <leader><space> :nohlsearch<CR> " turn off highlighted search results
