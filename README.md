@@ -10,7 +10,7 @@
 -  Install [oh-my-zsh](http://ohmyz.sh/)
 
 ## iTerm2
- -  Install ~/dotfiles/jellybeans.itermcolors
+ -  Install ~/dotfiles/base16-ateliercave.itermcolors
 
 ## VIM
 Install VIM and [pathogen.vim](https://github.com/tpope/vim-pathogen)
