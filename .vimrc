@@ -13,7 +13,8 @@ set background=dark
 filetype plugin indent on   " detect filetype, load indents/plugins
 syntax on                   " syntax highlighting
 
-colorscheme jellybeans
+"colorscheme jellybeans
+colorscheme base16-ateliercave
 
 set softtabstop=4           " tab = 4 spaces
 set shiftwidth=4            " auto indent 4 spaces
@@ -49,8 +50,9 @@ autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype typescript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype css        setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype scss       setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype ruby       setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype go         setlocal ts=4 sts=4 sw=4
-autocmd Filetype python     setlocal ts=4 sts=4 sw=4 expandtab encoding=utf-8
+autocmd Filetype python     setlocal ts=4 sts=4 sw=4 expandtab
 
 " spellcheck for markdown files
 autocmd BufRead,BufNewFile *.md setlocal spell
