@@ -100,3 +100,6 @@ export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# OPAM configuration
+. /Users/einherjar/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
