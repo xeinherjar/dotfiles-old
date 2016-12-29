@@ -129,6 +129,10 @@ set laststatus=2
 " GitGutter
 " https://github.com/airblade/vim-gitgutter
 
+
+" elm-vim
+" https://github.com/ElmCast/elm-vim
+
 " Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
