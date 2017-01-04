@@ -127,7 +127,7 @@ execute pathogen#infect()
 " Toggle on/off CTRL+N
 map <C-n> :NERDTreeToggle<CR>
 " Close VIM if only NERDTree is left
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " airline - only works with NERDtree enabled, this fixes that.
 set laststatus=2
