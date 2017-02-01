@@ -14,7 +14,8 @@ filetype plugin indent on   " detect filetype, load indents/plugins
 syntax on                   " syntax highlighting
 
 "colorscheme jellybeans
-colorscheme base16-ateliercave
+"colorscheme base16-ateliercave
+colorscheme space-vim-dark
 
 set softtabstop=4           " tab = 4 spaces
 set shiftwidth=4            " auto indent 4 spaces
@@ -77,6 +78,9 @@ inoremap <up>    <nop>
 inoremap <down>  <nop>
 inoremap <left>  <nop>
 inoremap <right> <nop>
+
+" disable mouse
+set mouse=""
 
 " move display line, not text line
 nnoremap j gj
