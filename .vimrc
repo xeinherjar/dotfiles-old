@@ -14,7 +14,8 @@ filetype plugin indent on   " detect filetype, load indents/plugins
 syntax on                   " syntax highlighting
 
 "colorscheme jellybeans
-colorscheme base16-ateliercave
+"colorscheme base16-ateliercave
+colorscheme space-vim-dark
 
 set softtabstop=4           " tab = 4 spaces
 set shiftwidth=4            " auto indent 4 spaces
@@ -29,8 +30,6 @@ set visualbell              " use visual bell vs beeping
 set scrolloff=5             " minimal number of lines above/below cursor
 set cursorline              " highlight current line
 set textwidth=80            " wrap at 80 characters
-"set colorcolumn=+1          " visually show column 80
-"highlight ColorColumn ctermbg=8 " set colorcolumn color
 
 " Highlight when text exceedes 80 characters in length
 " Without the group it only works on the first buffer opened
@@ -80,11 +79,14 @@ inoremap <down>  <nop>
 inoremap <left>  <nop>
 inoremap <right> <nop>
 
+" disable mouse
+set mouse=""
+
 " move display line, not text line
 nnoremap j gj
 nnoremap k gk
 
-" move lines up/down
+" move lines up/down with option/alt + j | k
 " iTerm2 requires set option key as ESC+
 " Profiles > Keys > 'Left Options acts as', set ESC+
 nnoremap <A-j> :m .+1<CR>==
@@ -120,18 +122,18 @@ execute pathogen#infect()
 " Toggle on/off CTRL+N
 map <C-n> :NERDTreeToggle<CR>
 " Close VIM if only NERDTree is left
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " airline - only works with NERDtree enabled, this fixes that.
 set laststatus=2
-" let g:airline_powerline_fonts = 1
+
+" removes > from airline since we aren't using a patched font
+let g:airline_powerline_fonts = 0
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 
 " GitGutter
 " https://github.com/airblade/vim-gitgutter
-
-
-" elm-vim
-" https://github.com/ElmCast/elm-vim
 
 " Syntastic
 set statusline+=%#warningmsg#
