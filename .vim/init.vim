@@ -1,1 +1,0 @@
-/Users/einherjar/dotfiles/.vimrc
