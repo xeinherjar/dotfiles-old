@@ -131,6 +131,7 @@ set laststatus=2
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
+let g:airline_theme= 'violet'
 
 " GitGutter
 " https://github.com/airblade/vim-gitgutter
@@ -147,7 +148,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['jshint']
-
 
 " Macros, functions
 
