@@ -19,3 +19,6 @@
 [submodule ".vim/bundle/rust.vim"]
 	path = .vim/bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
+[submodule ".vim/bundle/--force"]
+	path = .vim/bundle/--force
+	url = git@github.com:lambdatoast/elm.vim.git

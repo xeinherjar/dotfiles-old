@@ -68,3 +68,8 @@ Tell Git about global git ignore file
 ```
 git config --global core.excludesfile ~/dotfiles/.gitignore_global
 ```
+
+## Emacs?
+```
+ln -s ~/dotfiles/.emacs.d ~/.emacs.d
+```

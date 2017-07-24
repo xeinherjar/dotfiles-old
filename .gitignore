@@ -1,1 +1,6 @@
 .vim/init.vim
+
+# EMACS Stuff
+auto-save-list
+/elpa/
+/emacs-backup/
