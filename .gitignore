@@ -2,5 +2,5 @@
 
 # EMACS Stuff
 auto-save-list
-/elpa/
-/emacs-backup/
+.emacs.d/elpa/
+.emacs.d/emacs-backup/
