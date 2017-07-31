@@ -15,16 +15,24 @@
 ;; Disable audio bell
 (setq visible-bell 1)
 
-;; Hide title and tool bars
+;; Hide title, tool, and scroll bars
 (menu-bar-mode -1)
 (tool-bar-mode -1)
-
+(scroll-bar-mode -1)
 
 ;; Line numbers
 (global-linum-mode t)
 ;; Spacing between linenumber and text
 (setq linum-format "%d ")
 
+;; Disable startup messages
+(setq inhibit-startup-message t
+inhibit-startup-echo-area-message t)
+
+;; Basically enabling fuzzy searching
+(ido-mode 1)
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
