@@ -12,42 +12,29 @@
 ## iTerm2
  -  Install ~/dotfiles/base16-ateliercave.itermcolors
 
-## VIM
-Install VIM and [pathogen.vim](https://github.com/tpope/vim-pathogen)
+## Vim or NeoVim
 ```
 brew install vim
+brew install neovim
 ```
 
 ### Add dot files add vim plugins
+For Vim
 ```
 cd ~
 git clone git@github.com:xeinherjar/dotfiles.git
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.vim ~/.vim
-cd ~/.vim
-git submodule init
-git submodule update
 ```
 
-Need to update all plugins?
-`git submodule foreach git pull origin master`
-
-Recently started using [NeoVim](https://github.com/neovim/neovim)
+For NeoVim
 ```
 mkdir -p ~/.config
 ln -s ~/dotfiles/.vim .config/nvim
 ln -s ~/dotfiles/.vimrc .config/nvim/init.vim
 ```
 
-Use git submodules for pathogen
-```
-cd ~/.vim/bundle
-git submodule add git@path/to/to/good/stuff.git
-git add .
-git commit -m "installed x plugin"
-```
 
-I use Syntastic
 For JavaScript/ES2015/JSX
 ```
 npm install -g eslint

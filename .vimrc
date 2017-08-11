@@ -5,6 +5,25 @@ set modelines=0
 " Fix backspace
 set backspace=indent,eol,start
 
+" Setup plugins first
+let config_dir = has("nvim") ? '~/.config/nvim' : '~/.vim'
+if empty(glob(config_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo ' . config_dir . '/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall
+endif
+call plug#begin(config_dir . '/plugged')
+    Plug 'airblade/vim-gitgutter'
+    Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+    Plug 'vim-airline/vim-airline'
+    Plug 'w0rp/ale'
+
+    " Languages
+    Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+
+    " Colorschemes
+call plug#end()
+
+
 " Terminal..
 set t_Co=256
 let g:rehash256 = 1
@@ -113,12 +132,6 @@ nnoremap <leader><space> :nohlsearch<CR> " turn off highlighted search results
 nnoremap <leader>W :call <SID>StripTrailingWhiteSpaces()<CR>
 nnoremap <leader>N :call NumberToggle()<CR>
 
-
-
-" plugins
-execute pathogen#infect()
-
-" nerdtree
 " Toggle on/off CTRL+N
 map <C-n> :NERDTreeToggle<CR>
 " Close VIM if only NERDTree is left
@@ -132,22 +145,6 @@ let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_theme= 'violet'
-
-" GitGutter
-" https://github.com/airblade/vim-gitgutter
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_loc_list_height = 4
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_javascript_checkers = ['jshint']
 
 " Macros, functions
 

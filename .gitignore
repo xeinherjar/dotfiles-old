@@ -1,4 +1,7 @@
 .vim/init.vim
+.vim/plugged
+.vim/autoload/plug.vim
+.vim/.netrwhist
 
 # EMACS Stuff
 auto-save-list
