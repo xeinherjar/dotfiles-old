@@ -95,5 +95,18 @@ export PATH="$PATH:$GOPATH/bin"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
+# RabbitMQ
+export PATH="$PATH:/usr/local/sbin" # Add RVM to PATH for scripting
+
 # OPAM configuration
 . /Users/einherjar/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# Pyenv
+export PYENV_VIRTUALENV_DISABLE_PROMPT=0
+eval "$(pyenv init -)"
+# Pyenv virtualenv support, this allows it to auto source when moving into a
+# directory
+eval "$(pyenv virtualenv-init -)"
+
+# Add rustup and rust support
+export PATH="$PATH:$HOME/.cargo/bin"

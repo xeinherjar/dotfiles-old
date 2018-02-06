@@ -2,6 +2,7 @@
 
 ## OSX
 -  Install [iTerm2](https://www.iterm2.com/)
+-  Install [Alacritty](https://github.com/jwilm/alacritty) (evaluating as replacement of iTerm)
 -  Install [homebrew](http://brew.sh/)
 -  Install ZSH `brew install zsh`
 -  Edit /etc/shell to have an entry for the brew installed zsh
@@ -11,6 +12,11 @@
 
 ## iTerm2
  -  Install ~/dotfiles/base16-ateliercave.itermcolors
+
+## Alacritty
+ `ln -s ~/dotfiles/alacritty ~/.config/alacritty`
+ -  Need to use tmux, it doesn't offer scroll back or other *extra* terminal
+    options
 
 ## Vim or NeoVim
 ```

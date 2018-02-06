@@ -24,10 +24,16 @@
 (global-linum-mode t)
 ;; Spacing between linenumber and text
 (setq linum-format "%d ")
+;; Column Number in Status bar
+(setq column-number-mode t)
 
 ;; Disable startup messages
 (setq inhibit-startup-message t
 inhibit-startup-echo-area-message t)
+
+;; Show matching brackets
+(setq show-paren-delay 0)
+(show-paren-mode 1)
 
 ;; Basically enabling fuzzy searching
 (ido-mode 1)
@@ -43,7 +49,12 @@ inhibit-startup-echo-area-message t)
    (quote
     ("82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" default)))
  '(package-selected-packages (quote (flycheck color-theme-sanityinc-tomorrow js2-mode))))
-(custom-set-faces)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 
 
 ;; Ensure packages get installed

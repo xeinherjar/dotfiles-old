@@ -32,9 +32,8 @@ set background=dark
 filetype plugin indent on   " detect filetype, load indents/plugins
 syntax on                   " syntax highlighting
 
-"colorscheme jellybeans
+colorscheme jellybeans
 "colorscheme base16-ateliercave
-colorscheme space-vim-dark
 
 set softtabstop=4           " tab = 4 spaces
 set shiftwidth=4            " auto indent 4 spaces
