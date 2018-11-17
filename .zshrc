@@ -84,23 +84,7 @@ set -o vi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias music="ncmpcpp"
-alias pg-start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
-alias pg-stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
-export PATH="/Library/PostgreSQL/9.4/bin/:$PATH"
-
-# GOPATH
-export GOPATH="$HOME/go"
-export PATH="$PATH:$GOPATH/bin"
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-# RabbitMQ
-export PATH="$PATH:/usr/local/sbin" # Add RVM to PATH for scripting
-
-# OPAM configuration
-. /Users/einherjar/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
+#
 # Pyenv
 export PYENV_VIRTUALENV_DISABLE_PROMPT=0
 eval "$(pyenv init -)"
@@ -108,5 +92,9 @@ eval "$(pyenv init -)"
 # directory
 eval "$(pyenv virtualenv-init -)"
 
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/usr/bin/core_perl"
 # Add rustup and rust support
 export PATH="$PATH:$HOME/.cargo/bin"
+
+#XDG
+export XDG_CONFIG_HOME=$HOME/.config
