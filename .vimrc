@@ -19,6 +19,7 @@ call plug#begin(config_dir . '/plugged')
 
     " Languages
     Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+    Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
     " Colorschemes
 call plug#end()
