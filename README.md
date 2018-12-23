@@ -1,22 +1,16 @@
 # Dotfiles
 
 ## OSX
--  Install [iTerm2](https://www.iterm2.com/)
--  Install [Alacritty](https://github.com/jwilm/alacritty) (evaluating as replacement of iTerm)
+-  Install [Alacritty](https://github.com/jwilm/alacritty)
 -  Install [homebrew](http://brew.sh/)
 -  Install ZSH `brew install zsh`
 -  Edit /etc/shell to have an entry for the brew installed zsh
 -  Set Z Shell to default shell `chsh -s /usr/local/bin/zsh`
--  Close/Reopen iTerm
 -  Install [oh-my-zsh](http://ohmyz.sh/)
 
-## iTerm2
- -  Install ~/dotfiles/base16-ateliercave.itermcolors
 
 ## Alacritty
  `ln -s ~/dotfiles/alacritty ~/.config/alacritty`
- -  Need to use tmux, it doesn't offer scroll back or other *extra* terminal
-    options
 
 ## Vim or NeoVim
 ```
@@ -66,3 +60,12 @@ git config --global core.excludesfile ~/dotfiles/.gitignore_global
 ```
 ln -s ~/dotfiles/.emacs.d ~/.emacs.d
 ```
+
+## Linux Applications
+-  Install [PyEnv](https://github.com/pyenv/pyenv#installation)
+  -  `git clone https://github.com/pyenv/pyenv.git ~/.pyenv`
+-  Install [PyEnv-Virtualenv](https://github.com/pyenv/pyenv-virtualenv)
+  -  `git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv`
+-  Install [RustUp](https://rustup.rs/)
+-  Exa
+-  Ripgrep
