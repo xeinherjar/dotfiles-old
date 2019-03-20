@@ -57,4 +57,4 @@ eval "$(pyenv virtualenv-init -)"
 
 # Add rustup and rust support
 export PATH="$PATH:$HOME/.cargo/bin"
-
+export PATH="$HOME/bin:$PATH"
