@@ -63,14 +63,15 @@ set incsearch               " show partial results while typing
 set hlsearch                " highlight search results
 
 
+autocmd Filetype css        setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype go         setlocal ts=4 sts=4 sw=4
 autocmd Filetype html       setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
-autocmd Filetype typescript setlocal ts=2 sts=2 sw=2 expandtab
-autocmd Filetype css        setlocal ts=2 sts=2 sw=2 expandtab
-autocmd Filetype scss       setlocal ts=2 sts=2 sw=2 expandtab
-autocmd Filetype ruby       setlocal ts=2 sts=2 sw=2 expandtab
-autocmd Filetype go         setlocal ts=4 sts=4 sw=4
 autocmd Filetype python     setlocal ts=4 sts=4 sw=4 expandtab
+autocmd Filetype ruby       setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype scss       setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype typescript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype wast       setlocal ts=2 sts=2 sw=2 expandtab
 
 " spellcheck for markdown files
 autocmd BufRead,BufNewFile *.md setlocal spell
