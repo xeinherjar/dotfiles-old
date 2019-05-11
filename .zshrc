@@ -42,6 +42,10 @@ case "$(uname -s)" in
         export PATH="$PYENV_ROOT/bin:$PATH"
         # XDG
         export XDG_CONFIG_HOME=$HOME/.config
+        # Add wabt
+        export PATH="$PATH:$HOME/bin/wabt/bin"
+        # Local apps
+        export PATH="$HOME/bin:$PATH"
         ;;
     Darwin)
         # Work Laptop, pg
@@ -58,4 +62,3 @@ eval "$(pyenv virtualenv-init -)"
 
 # Add rustup and rust support
 export PATH="$PATH:$HOME/.cargo/bin"
-export PATH="$HOME/bin:$PATH"
