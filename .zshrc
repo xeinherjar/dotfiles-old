@@ -44,7 +44,8 @@ case "$(uname -s)" in
         export XDG_CONFIG_HOME=$HOME/.config
         ;;
     Darwin)
-
+        # Work Laptop, pg
+        export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
         ;;
 esac
 
@@ -57,4 +58,4 @@ eval "$(pyenv virtualenv-init -)"
 
 # Add rustup and rust support
 export PATH="$PATH:$HOME/.cargo/bin"
-
+export PATH="$HOME/bin:$PATH"
