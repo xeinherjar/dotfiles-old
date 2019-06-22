@@ -1,7 +1,6 @@
 # Dotfiles
 
 ## OSX
--  Install [Alacritty](https://github.com/jwilm/alacritty)
 -  Install [homebrew](http://brew.sh/)
 -  Install ZSH `brew install zsh`
 -  Edit /etc/shell to have an entry for the brew installed zsh
@@ -10,7 +9,10 @@
 
 
 ## Alacritty
- `ln -s ~/dotfiles/alacritty ~/.config/alacritty`
+Install [Alacritty](https://github.com/jwilm/alacritty)
+```
+ln -s ~/dotfiles/alacritty ~/.config/alacritty
+```
 
 ## Vim or NeoVim
 ```
@@ -32,16 +34,6 @@ For NeoVim
 mkdir -p ~/.config
 ln -s ~/dotfiles/.vim .config/nvim
 ln -s ~/dotfiles/.vimrc .config/nvim/init.vim
-```
-
-
-For JavaScript/ES2015/JSX
-```
-npm install -g eslint
-npm install -g babel-eslint
-npm install -g eslint-plugin-react
-
-ln -s ~/dotfiles/.eslintrc ~/.eslintrc
 ```
 
 ## zsh, oh-my-zsh, tmux
