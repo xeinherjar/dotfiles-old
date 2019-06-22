@@ -41,8 +41,16 @@ case "$(uname -s)" in
     Darwin)
         # Work Laptop, pg
         export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
+        # Local apps
+        export PATH="$HOME/bin:$PATH"
         ;;
 esac
+
+# kubectl completes me
+if [ -x "$(command -v kubectl)" ]
+then
+source <(kubectl completion zsh)
+fi
 
 # Pyenv
 export PYENV_VIRTUALENV_DISABLE_PROMPT=0
