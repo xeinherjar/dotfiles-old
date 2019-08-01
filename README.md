@@ -6,10 +6,12 @@
 -  Edit /etc/shell to have an entry for the brew installed zsh
 -  Set Z Shell to default shell `chsh -s /usr/local/bin/zsh`
 -  Install [oh-my-zsh](http://ohmyz.sh/)
+-  [Docker](https://download.docker.com/mac/stable/Docker.dmg)
 
 
 ## Alacritty
-Install [Alacritty](https://github.com/jwilm/alacritty)
+-  Install [Alacritty](https://github.com/jwilm/alacritty)
+-  Install [Hack font](https://github.com/source-foundry/Hack)
 ```
 ln -s ~/dotfiles/alacritty ~/.config/alacritty
 ```

@@ -43,6 +43,8 @@ case "$(uname -s)" in
         export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
         # Local apps
         export PATH="$HOME/bin:$PATH"
+        source ~/work/BetterCloudEnv
+        alias ls="exa"
         ;;
 esac
 

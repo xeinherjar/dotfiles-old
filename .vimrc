@@ -21,6 +21,10 @@ call plug#begin(config_dir . '/plugged')
     Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
     Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
+    " JavaScript
+    Plug 'pangloss/vim-javascript'
+    Plug 'mxw/vim-jsx'
+
     " Colorschemes
 call plug#end()
 
@@ -120,7 +124,6 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 inoremap jj <ESC>
 
 " windows
-nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
