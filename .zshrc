@@ -68,3 +68,5 @@ export PATH="$PATH:$HOME/.cargo/bin"
 # Aliases
 # History Format like HISTTIMEFORMAT='%F %T '
 alias history="fc -li 100"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -16,6 +16,7 @@ call plug#begin(config_dir . '/plugged')
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
     Plug 'vim-airline/vim-airline'
     Plug 'w0rp/ale'
+    Plug 'junegunn/fzf'
 
     " Languages
     Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
@@ -149,6 +150,9 @@ let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_theme= 'violet'
+
+" load fzf CTRL+o
+map <C-o> :FZF<CR>
 
 " Macros, functions
 
