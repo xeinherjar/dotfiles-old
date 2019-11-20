@@ -44,7 +44,6 @@ case "$(uname -s)" in
         # Local apps
         export PATH="$HOME/bin:$PATH"
         source ~/work/BetterCloudEnv
-        alias ls="exa"
         ;;
 esac
 
@@ -70,3 +69,4 @@ export PATH="$PATH:$HOME/.cargo/bin"
 alias history="fc -li 100"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

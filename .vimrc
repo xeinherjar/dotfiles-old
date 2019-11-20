@@ -13,10 +13,12 @@ if empty(glob(config_dir . '/autoload/plug.vim'))
 endif
 call plug#begin(config_dir . '/plugged')
     Plug 'airblade/vim-gitgutter'
-    Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-    Plug 'vim-airline/vim-airline'
-    Plug 'w0rp/ale'
     Plug 'junegunn/fzf'
+    Plug 'junegunn/fzf.vim'
+    Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+    Plug 'tpope/vim-commentary'
+    Plug 'w0rp/ale'
+    Plug 'vim-airline/vim-airline'
 
     " Languages
     Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
@@ -39,7 +41,9 @@ filetype plugin indent on   " detect filetype, load indents/plugins
 syntax on                   " syntax highlighting
 
 colorscheme jellybeans
-"colorscheme base16-ateliercave
+
+set noshowmode              " airline shows this anyway (insert/visual/replace)
+set nowrap                  " Don't wrap lines
 
 set softtabstop=4           " tab = 4 spaces
 set shiftwidth=4            " auto indent 4 spaces
@@ -52,8 +56,13 @@ set showmatch               " show matching bracket
 set encoding=utf-8          " character encoding
 set visualbell              " use visual bell vs beeping
 set scrolloff=5             " minimal number of lines above/below cursor
+set sidescrolloff=10        " minimal number of columns to left/right of cursor
 set cursorline              " highlight current line
-set textwidth=80            " wrap at 80 characters
+set ignorecase
+set smartcase               " search is not case sensative until you use a cap
+set splitbelow              " split window below by default
+set splitright              " split window to right by default
+set synmaxcol=500           " stop highlting long lines
 
 " Highlight when text exceedes 80 characters in length
 " Without the group it only works on the first buffer opened
@@ -67,16 +76,17 @@ set iskeyword-=-            " - is end of word
 set incsearch               " show partial results while typing
 set hlsearch                " highlight search results
 
-
-autocmd Filetype css        setlocal ts=2 sts=2 sw=2 expandtab
-autocmd Filetype go         setlocal ts=4 sts=4 sw=4
-autocmd Filetype html       setlocal ts=2 sts=2 sw=2 expandtab
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
-autocmd Filetype python     setlocal ts=4 sts=4 sw=4 expandtab
-autocmd Filetype ruby       setlocal ts=2 sts=2 sw=2 expandtab
-autocmd Filetype scss       setlocal ts=2 sts=2 sw=2 expandtab
-autocmd Filetype typescript setlocal ts=2 sts=2 sw=2 expandtab
-autocmd Filetype wast       setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype css            setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype go             setlocal ts=4 sts=4 sw=4
+autocmd Filetype html           setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype javascript     setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype javascript.jsx setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype json           setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype python         setlocal ts=4 sts=4 sw=4 expandtab
+autocmd Filetype ruby           setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype scss           setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype typescript     setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype wast           setlocal ts=2 sts=2 sw=2 expandtab
 
 " spellcheck for markdown files
 autocmd BufRead,BufNewFile *.md setlocal spell
@@ -130,15 +140,17 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Call native
-nnoremap <leader><space> :nohlsearch<CR> " turn off highlighted search results
+" turn off highlighted search results
+nnoremap <leader><space> :nohlsearch<CR>
 
 " Call Macro|Function
 nnoremap <leader>W :call <SID>StripTrailingWhiteSpaces()<CR>
 nnoremap <leader>N :call NumberToggle()<CR>
 
-" Toggle on/off CTRL+N
-map <C-n> :NERDTreeToggle<CR>
+" Toggle on/off
+nnoremap <leader>nn :NERDTreeToggle<CR>
+" Toggle on with buffer file selected
+nnoremap <leader>nf :NERDTreeToggle %<CR>
 " Close VIM if only NERDTree is left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -151,8 +163,29 @@ let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_theme= 'violet'
 
-" load fzf CTRL+o
-map <C-o> :FZF<CR>
+nmap <leader>f :FZF<CR>
+nmap <leader>b :Buffers<CR>
+" load fzf in a floating window in neovim
+if has('nvim')
+    let $FZF_DEFAULT_OPTS='--layout=reverse'
+    let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+
+    function! FloatingFZF()
+        let buf = nvim_create_buf(v:false, v:true)
+        let height = float2nr(&lines * 0.9)
+        let width = float2nr(&columns * 0.6)
+        let horizontal = float2nr((&columns - width) / 2)
+        let vertical = 1
+        let opts = {
+              \ 'relative': 'editor',
+              \ 'row': vertical,
+              \ 'col': horizontal,
+              \ 'width': width,
+              \ 'height': height
+              \ }
+        call nvim_open_win(buf, v:true, opts)
+    endfunction
+endif
 
 " Macros, functions
 
