@@ -31,18 +31,23 @@ call plug#begin(config_dir . '/plugged')
     Plug 'mxw/vim-jsx'
 
     " Colorschemes
+    Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
 
 " Terminal..
 set t_Co=256
 let g:rehash256 = 1
+
+set termguicolors
 set background=dark
+let g:gruvbox_material_background='hard'
+let g:airline_theme='gruvbox_material'
+colorscheme gruvbox-material
 
 filetype plugin indent on   " detect filetype, load indents/plugins
 syntax on                   " syntax highlighting
 
-colorscheme jellybeans
 
 set noshowmode              " airline shows this anyway (insert/visual/replace)
 set nowrap                  " Don't wrap lines
@@ -163,7 +168,6 @@ set laststatus=2
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-let g:airline_theme= 'violet'
 
 nmap <leader>f :FZF<CR>
 nmap <leader>b :Buffers<CR>
