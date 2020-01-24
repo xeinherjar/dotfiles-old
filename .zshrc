@@ -39,10 +39,10 @@ case "$(uname -s)" in
         export PATH="$HOME/bin:$PATH"
         ;;
     Darwin)
-        # Work Laptop, pg
-        export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
+        # Work Laptop
         # Local apps
         export PATH="$HOME/bin:$PATH"
+        # sets env vars, jvm aliases
         source ~/work/BetterCloudEnv
         ;;
 esac
@@ -62,7 +62,6 @@ eval "$(pyenv virtualenv-init -)"
 
 # Add rustup and rust support
 export PATH="$PATH:$HOME/.cargo/bin"
-
 
 # Aliases
 # History Format like HISTTIMEFORMAT='%F %T '
