@@ -27,8 +27,8 @@ call plug#begin(config_dir . '/plugged')
     Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
     " JavaScript
-    Plug 'pangloss/vim-javascript'
-    Plug 'mxw/vim-jsx'
+    Plug 'yuezk/vim-js'
+    Plug 'maxmellon/vim-jsx-pretty'
 
     " Colorschemes
     Plug 'sainnhe/gruvbox-material'
