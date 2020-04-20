@@ -96,8 +96,8 @@ autocmd Filetype typescript     setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype wast           setlocal ts=2 sts=2 sw=2 expandtab
 
 " spellcheck for markdown files
-autocmd BufRead,BufNewFile *.md setlocal spell
-autocmd BufRead,BufNewFile *.markdown setlocal spell
+autocmd BufRead,BufNewFile *.md setlocal spell ts=2 sts=2 sw=2 expandtab
+autocmd BufRead,BufNewFile *.markdown setlocal spell ts=2 sts=2 sw=2 expandtab
 " spellcheck on git commit messages
 autocmd FileType gitcommit setlocal spell
 
