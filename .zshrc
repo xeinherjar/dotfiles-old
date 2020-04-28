@@ -16,12 +16,9 @@ plugins=(git)
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export MANPATH="/usr/local/man:$MANPATH"
+export EDITOR='emacs'
 
 source $ZSH/oh-my-zsh.sh
-
-# Set Readline to use vi keybindings!
-set -o vi
-export EDITOR='nvim'
 
 # Linux or OSX?
 case "$(uname -s)" in
@@ -37,6 +34,8 @@ case "$(uname -s)" in
         export PATH="$PATH:$HOME/bin/wabt/bin"
         # Local apps
         export PATH="$HOME/bin:$PATH"
+        # Scala needs that sweet sweet JVM, to bad java comes along
+        export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
         ;;
     Darwin)
         # Work Laptop
@@ -53,6 +52,9 @@ then
 source <(kubectl completion zsh)
 fi
 
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_DEFAULT_OPTS="--layout=reverse --height 40% --border"
+
 # Pyenv
 export PYENV_VIRTUALENV_DISABLE_PROMPT=0
 eval "$(pyenv init -)"
@@ -62,10 +64,6 @@ eval "$(pyenv virtualenv-init -)"
 
 # Add rustup and rust support
 export PATH="$PATH:$HOME/.cargo/bin"
-
-# Aliases
-# History Format like HISTTIMEFORMAT='%F %T '
-alias history="fc -li 100"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

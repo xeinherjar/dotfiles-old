@@ -51,8 +51,9 @@ git config --global core.excludesfile ~/dotfiles/.gitignore_global
 ```
 
 ## Emacs?
+Install Doom emacs
 ```
-ln -s ~/dotfiles/.emacs.d ~/.emacs.d
+ln -s ~/dotfiles/.doom.d ~/.doom.d
 ```
 
 ## Linux Applications
