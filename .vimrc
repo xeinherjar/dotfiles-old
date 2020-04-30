@@ -157,7 +157,7 @@ nnoremap <leader>N :call NumberToggle()<CR>
 " Toggle on/off
 nnoremap <leader>nn :NERDTreeToggle<CR>
 " Toggle on with buffer file selected
-nnoremap <leader>nf :NERDTreeToggle %<CR>
+nnoremap <leader>nf :NERDTreeFind%<CR>
 " Close VIM if only NERDTree is left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 

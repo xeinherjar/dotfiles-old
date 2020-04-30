@@ -51,8 +51,15 @@ git config --global core.excludesfile ~/dotfiles/.gitignore_global
 ```
 
 ## Emacs?
-Install Doom emacs
+Install Emacs, doom emacs
 ```
+brew tap d12frosted/emacs-plus
+brew install emacs-plus --without-spacemacs-icon
+ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications
+
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
+
 ln -s ~/dotfiles/.doom.d ~/.doom.d
 ```
 
