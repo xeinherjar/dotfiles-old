@@ -53,3 +53,8 @@
 ;; they are implemented.
 
 (setq evil-escape-key-sequence "jj")
+
+;; Display a clock in the modeline
+(display-time-mode 1)
+
+(load! "bindings")
