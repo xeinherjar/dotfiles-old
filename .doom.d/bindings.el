@@ -8,6 +8,6 @@
   "C-l"  #'evil-window-right
 
 (:after org
-    (map! :map org-mode-map
-        :n "M-j" #'org-metadown
-        :n "M-k" #'org-metaup)))
+  :map org-mode-map
+    :n "M-j" #'org-metadown
+    :n "M-k" #'org-metaup))
