@@ -10,4 +10,9 @@
 (:after org
   :map org-mode-map
     :n "M-j" #'org-metadown
-    :n "M-k" #'org-metaup))
+    :n "M-k" #'org-metaup)
+
+;; localleader sbt-start
+(:after scala-mode
+  :map scala-mode-map
+    :nv "M-c" #'sbt-send-region))

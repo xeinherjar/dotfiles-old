@@ -12,6 +12,7 @@
 ## Alacritty
 -  Install [Alacritty](https://github.com/jwilm/alacritty)
 -  Install [Hack font](https://github.com/source-foundry/Hack)
+  - `apt-get install fonts-hack`
 ```
 ln -s ~/dotfiles/alacritty ~/.config/alacritty
 ```
@@ -22,7 +23,7 @@ brew install vim
 brew install neovim
 ```
 
-### Add dot files add vim plugins
+### Add dot files and vim plugins
 For Vim
 ```
 cd ~
@@ -57,10 +58,9 @@ brew tap d12frosted/emacs-plus
 brew install emacs-plus --without-spacemacs-icon
 ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications
 
+ln -s ~/dotfiles/.doom.d ~/.doom.d
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
-
-ln -s ~/dotfiles/.doom.d ~/.doom.d
 ```
 
 ## Linux Applications
@@ -69,5 +69,24 @@ ln -s ~/dotfiles/.doom.d ~/.doom.d
 -  Install [PyEnv-Virtualenv](https://github.com/pyenv/pyenv-virtualenv)
   -  `git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv`
 -  Install [RustUp](https://rustup.rs/)
--  Exa
 -  Ripgrep
+
+## Scala needs that sweet sweet JVM, to bad java comes along
+- Install [SDKMAN](https://sdkman.io/)
+- `sdk list java`
+- `sdk install java 11.0.7.hs-adpt`
+- `sdk install sbt`
+- `sdk install scala 2.12.11`
+- [Metals](https://scalameta.org/metals/docs/editors/emacs.html)
+  - ```
+  curl -L -o coursier https://git.io/coursier-cli
+  chmod +x coursier
+  ./coursier bootstrap \
+    --java-opt -Xss4m \
+    --java-opt -Xms100m \
+    --java-opt -Dmetals.client=emacs \
+    org.scalameta:metals_2.12:0.8.4 \
+    -r bintray:scalacenter/releases \
+    -r sonatype:snapshots \
+    -o ~/bin/metals-emacs -f
+  ```

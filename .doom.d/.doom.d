@@ -1,0 +1,1 @@
+/home/einherjar/dotfiles/.doom.d

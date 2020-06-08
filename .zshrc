@@ -34,15 +34,13 @@ case "$(uname -s)" in
         export PATH="$PATH:$HOME/bin/wabt/bin"
         # Local apps
         export PATH="$HOME/bin:$PATH"
-        # Scala needs that sweet sweet JVM, to bad java comes along
-        export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
         ;;
     Darwin)
         # Work Laptop
         # Local apps
         export PATH="$HOME/bin:$PATH"
         # sets env vars, jvm aliases
-        source ~/work/BetterCloudEnv
+        # source ~/work/someFile
         ;;
 esac
 
@@ -65,5 +63,15 @@ eval "$(pyenv virtualenv-init -)"
 # Add rustup and rust support
 export PATH="$PATH:$HOME/.cargo/bin"
 
+# Add stack support
+export PATH="$PATH:$HOME/.local/bin"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/einherjar/.sdkman"
+[[ -s "/home/einherjar/.sdkman/bin/sdkman-init.sh" ]] && source "/home/einherjar/.sdkman/bin/sdkman-init.sh"
