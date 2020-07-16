@@ -13,7 +13,6 @@ if empty(glob(config_dir . '/autoload/plug.vim'))
 endif
 call plug#begin(config_dir . '/plugged')
     Plug 'airblade/vim-gitgutter'
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
     Plug 'junegunn/fzf.vim'
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
     Plug 'tpope/vim-commentary'
