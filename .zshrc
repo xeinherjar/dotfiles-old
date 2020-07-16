@@ -20,29 +20,20 @@ export EDITOR='emacs'
 
 source $ZSH/oh-my-zsh.sh
 
-# Linux or OSX?
-case "$(uname -s)" in
-    Linux)
-        # Arch
-        export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/usr/bin/core_perl"
-        # PYENV
-        export PYENV_ROOT="$HOME/.pyenv"
-        export PATH="$PYENV_ROOT/bin:$PATH"
-        # XDG
-        export XDG_CONFIG_HOME=$HOME/.config
-        # Add wabt
-        export PATH="$PATH:$HOME/bin/wabt/bin"
-        # Local apps
-        export PATH="$HOME/bin:$PATH"
-        ;;
-    Darwin)
-        # Work Laptop
-        # Local apps
-        export PATH="$HOME/bin:$PATH"
-        # sets env vars, jvm aliases
-        # source ~/work/someFile
-        ;;
-esac
+# Arch
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/usr/bin/core_perl"
+# PYENV
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+# XDG
+export XDG_CONFIG_HOME=$HOME/.config
+# Add wabt
+export PATH="$PATH:$HOME/bin/wabt/bin"
+# Local apps
+export PATH="$HOME/bin:$PATH"
+
+# Work Laptop
+[ -e ~/work/work.rc ] && source ~/work/work.rc
 
 # kubectl completes me
 if [ -x "$(command -v kubectl)" ]
@@ -52,13 +43,7 @@ fi
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40% --border"
-
-# Pyenv
-export PYENV_VIRTUALENV_DISABLE_PROMPT=0
-eval "$(pyenv init -)"
-# Pyenv virtualenv support, this allows it to auto source when moving into a
-# directory
-eval "$(pyenv virtualenv-init -)"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Add rustup and rust support
 export PATH="$PATH:$HOME/.cargo/bin"
@@ -66,13 +51,9 @@ export PATH="$PATH:$HOME/.cargo/bin"
 # Add stack support
 export PATH="$PATH:$HOME/.local/bin"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-#export SDKMAN_DIR="$HOME/.sdkman"
-#[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 if [ -e /home/alex/.nix-profile/etc/profile.d/nix.sh ]; then . /home/alex/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
