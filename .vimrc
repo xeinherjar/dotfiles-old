@@ -1,4 +1,4 @@
-" Don't care about VI
+" Dod't care about VI
 set nocompatible
 set modelines=0
 
@@ -13,7 +13,6 @@ if empty(glob(config_dir . '/autoload/plug.vim'))
 endif
 call plug#begin(config_dir . '/plugged')
     Plug 'airblade/vim-gitgutter'
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
     Plug 'junegunn/fzf.vim'
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
     Plug 'tpope/vim-commentary'
@@ -93,6 +92,7 @@ autocmd Filetype python         setlocal ts=4 sts=4 sw=4 expandtab
 autocmd Filetype ruby           setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype scss           setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype typescript     setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yaml           setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype wast           setlocal ts=2 sts=2 sw=2 expandtab
 
 " spellcheck for markdown files
@@ -168,6 +168,9 @@ set laststatus=2
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
+
+" show hidden files/folders in NERDtree
+let NERDTreeShowHidden=1
 
 nmap <leader>f :FZF<CR>
 nmap <leader>b :Buffers<CR>
