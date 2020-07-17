@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Firefox Nightly
+Comment=Browse the World Wide Web
+Icon=/home/einherjar/bin/firefox/browser/chrome/icons/default/default128.png
+Exec=/home/einherjar/bin/firefox/firefox %u
+Terminal=false
+Type=Application
+MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
+Categories=Network;WebBrowser;
