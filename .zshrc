@@ -41,7 +41,7 @@ then
 source <(kubectl completion zsh)
 fi
 
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40% --border"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -57,3 +57,5 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 if [ -e /home/alex/.nix-profile/etc/profile.d/nix.sh ]; then . /home/alex/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+alias nix-python="nix-shell --run \"pycharm .\" &> /dev/null & disown"
+alias nix-idea="nix-shell --run \"idea .\" &> /dev/null & disown"
