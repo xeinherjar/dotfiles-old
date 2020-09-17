@@ -41,7 +41,7 @@ then
 source <(kubectl completion zsh)
 fi
 
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
+export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40% --border"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

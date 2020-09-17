@@ -110,7 +110,7 @@ if has ('nvim')
 endif
 
 " Key maps
-let mapleader = ","
+let mapleader = " "
 
 " force myself to use hjkl for nav
 nnoremap <up>    <nop>
@@ -149,7 +149,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " turn off highlighted search results
-nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <leader>/ :nohlsearch<CR>
 
 " Call Macro|Function
 nnoremap <leader>W :call <SID>StripTrailingWhiteSpaces()<CR>
