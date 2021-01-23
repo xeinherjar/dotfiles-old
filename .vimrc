@@ -1,4 +1,4 @@
-" Dod't care about VI
+" Don't care about VI
 set nocompatible
 set modelines=0
 
@@ -32,6 +32,7 @@ call plug#begin(config_dir . '/plugged')
 
     " Colorschemes
     Plug 'sainnhe/gruvbox-material'
+    Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 
@@ -39,11 +40,11 @@ call plug#end()
 set t_Co=256
 let g:rehash256 = 1
 
-set termguicolors
 set background=dark
-let g:gruvbox_material_background='hard'
-let g:airline_theme='gruvbox_material'
-colorscheme gruvbox-material
+set termguicolors
+"let g:gruvbox_material_background='hard'
+let g:airline_theme='nord'
+colorscheme nord
 
 filetype plugin indent on   " detect filetype, load indents/plugins
 syntax on                   " syntax highlighting
